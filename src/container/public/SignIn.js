@@ -14,9 +14,10 @@ const SignIn = () => {
 
             <button
                 onClick={() => {
-                    handleUserAuthentication("test");
-                    navigate(from, {
-                        replace: true,
+                    handleUserAuthentication("test", () => {
+                        navigate(from, {
+                            replace: true,
+                        });
                     });
                 }}
             >

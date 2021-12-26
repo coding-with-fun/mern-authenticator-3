@@ -7,17 +7,18 @@ export const AuthProvider = ({ children }) => {
         Boolean(localStorage.getItem("sra-user-token"))
     );
 
-    const handleUserAuthentication = (token) => {
-        let userToken;
+    const handleUserAuthentication = (token, cb) => {
+        let userToken = token;
 
-        if (token) {
-            userToken = token;
+        if (userToken) {
             localStorage.setItem("sra-user-token", userToken);
         } else {
-            userToken = localStorage.getItem("sra-user-token");
+            localStorage.removeItem("sra-user-token");
         }
 
         setIsUserAuthenticated(Boolean(userToken));
+
+        if (cb) cb();
     };
 
     return (

@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import About from "../container/global/About";
 import Home from "../container/global/Home";
 import Profile from "../container/private/Profile";
 import SignIn from "../container/public/SignIn";
@@ -9,6 +10,7 @@ const IndexRouter = () => {
     return (
         <Routes>
             <Route index element={<Home />} />
+            <Route path="/about" element={<About />} />
             <Route
                 path="/signin"
                 element={

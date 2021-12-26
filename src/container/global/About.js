@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 
-const Profile = () => {
+const About = () => {
     const { handleUserAuthentication } = useContext(AuthContext);
 
     return (
         <div>
-            <h3>Profile</h3>
+            <h3>About</h3>
 
             <button
                 onClick={() => {
@@ -19,4 +19,4 @@ const Profile = () => {
     );
 };
 
-export default Profile;
+export default About;
