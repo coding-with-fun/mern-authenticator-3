@@ -3,12 +3,11 @@ import { createContext, useState } from "react";
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-    const [isUserAuthenticated, setIsUserAuthenticated] = useState(
-        Boolean(localStorage.getItem("sra-user-token"))
-    );
+    let userToken = Boolean(localStorage.getItem("sra-user-token"));
+    const [isUserAuthenticated, setIsUserAuthenticated] = useState(userToken);
 
     const handleUserAuthentication = (token, cb) => {
-        let userToken = token;
+        userToken = token;
 
         if (userToken) {
             localStorage.setItem("sra-user-token", userToken);
